@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Enova_Windows": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files (x86)\\Soneta\\enova365 2401.2.6-net\\SonetaExplorer.exe",
+      "commandLineArgs": "--nodbextensions --extpath=\"C:\\Program Files\\Common Files\\Soneta\\Assemblies\\FirmaHandlowaHome\""
+    }
+  }
+}
