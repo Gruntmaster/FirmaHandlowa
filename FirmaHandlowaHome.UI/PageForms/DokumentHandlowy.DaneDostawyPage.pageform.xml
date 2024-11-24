@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		  Priority="30"
+		  RightName="Page:DokumentHandlowyDaneDostawyPage"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  DataType="Soneta.Handel.DokumentHandlowy, Soneta.Handel">
+	
+	<Page Name="DokumentHandlowyDaneDostawyPage" CaptionHtml="Dane dostawy" DataContext="{DataSource}">
+		<Group CaptionHtml="Ogólne">
+			<Field CaptionHtml="Nazwa kuriera" Width="25" LabelWidth="20" EditValue="{Features.NazwaKuriera}" />
+			<Field CaptionHtml="Rodzaj kuriera" Width="25" LabelWidth="20" EditValue="{Features.RodzajKuriera}" />
+		</Group>
+		<Group CaptionHtml="Paczka">
+			<Label CaptionHtml="Informacje o paczce" Width="50" />
+			<Row>
+				<Field CaptionHtml="Numer listu" Width="10" LabelWidth="20" EditValue="{Przesylka.NumerListu}" />
+				<Field CaptionHtml="Id przesyłki" Width="10" LabelWidth="20" EditValue="{Przesylka.IdPrzesylki}" />
+			</Row>
+		</Group>
+	</Page>
+</DataForm>

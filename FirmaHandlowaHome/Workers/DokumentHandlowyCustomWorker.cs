@@ -19,7 +19,7 @@ namespace FirmaHandlowaHome.Workers
         [Context]
         public DokumentHandlowy DokumentHandlowy { get; set; }
 
-        [Action("Testowy prycisk",
+        [Action("Uzupełnij dane przesyłki",
             CommandStyle = Soneta.Commands.CommandStyle.Red,
             Icon = ActionIcon.Database,
             Target = ActionTarget.ToolbarWithText,
@@ -28,10 +28,53 @@ namespace FirmaHandlowaHome.Workers
         {
             using (ITransaction transaction = Session.Logout(true))
             {
-                DokumentHandlowy.Obcy.Numer = "1234";
+                DokumentHandlowy.Features["NazwaKuriera"] = "DPD";
+                DokumentHandlowy.Features["RodzajKuriera"] = "Standardowo";
+
+                DokumentHandlowy.Przesylka.NumerListu = "DP2131234453123";
+                DokumentHandlowy.Przesylka.IdPrzesylki = "12345";
 
                 transaction.CommitUI();
             }
+        }
+
+        [Action("Uzupełnij dane przesyłki 2",
+           CommandStyle = Soneta.Commands.CommandStyle.Red,
+           Icon = ActionIcon.Delete,
+           Target = ActionTarget.ToolbarWithText,
+           Mode = ActionMode.SingleSession | ActionMode.OnlyForm | ActionMode.ConfirmFinished)]
+        public string DocumentAction2()
+        {
+            // Ustawianie numeru obcego dla dokuemntu handlowego
+            using (ITransaction transaction = Session.Logout(true))
+            {
+                DokumentHandlowy.Features["NazwaKuriera"] = "DPD";
+                DokumentHandlowy.Features["RodzajKuriera"] = "Standardowo";
+
+                DokumentHandlowy.Przesylka.NumerListu = "DP2131234453123";
+                DokumentHandlowy.Przesylka.IdPrzesylki = "12345";
+
+                transaction.CommitUI();
+            }
+            return $"Dane przesyłki uzupełnione dla dokumentu {DokumentHandlowy.Numer.NumerPelny}";
+        }
+
+        public bool IsVisibleDocumentAction()
+        {
+            if(DokumentHandlowy.Definicja.Symbol == "ZO" || DokumentHandlowy.Definicja.Symbol == "OO")
+            {
+                return true;
+            }
+            return false;   
+        }
+
+        public bool IsEnabledDocumentAction()
+        {
+            if (DokumentHandlowy.Definicja.Symbol == "ZO")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
