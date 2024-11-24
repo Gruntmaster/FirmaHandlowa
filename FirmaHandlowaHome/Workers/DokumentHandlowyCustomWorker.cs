@@ -13,6 +13,12 @@ namespace FirmaHandlowaHome.Workers
 {
     public class DokumentHandlowyCustomWorker
     {
+        [Context]
+        public Session Session { get; set; }
+
+        [Context]
+        public DokumentHandlowy DokumentHandlowy { get; set; }
+
         [Action("Testowy prycisk",
             CommandStyle = Soneta.Commands.CommandStyle.Red,
             Icon = ActionIcon.Database,
@@ -20,7 +26,12 @@ namespace FirmaHandlowaHome.Workers
             Mode = ActionMode.SingleSession | ActionMode.OnlyForm | ActionMode.ConfirmFinished)]
         public void DocumentAction()
         {
+            using (ITransaction transaction = Session.Logout(true))
+            {
+                DokumentHandlowy.Obcy.Numer = "1234";
 
+                transaction.CommitUI();
+            }
         }
     }
 }
