@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		  Priority="30"
+		  RightName="Page:TowarModelPage"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  DataType="Soneta.Towary.Towar, Soneta.Handel">
+
+	<Page Name="TowarModelPage" CaptionHtml="Dane techniczne" DataContext="{DataSource}">
+		<Group CaptionHtml="Dane podstawowe">
+			<Label CaptionHtml="Opis modelu towaru" Width="50" />
+			<Row>
+				<Field CaptionHtml="Marka" Width="25" LabelWidth="20" EditValue="{Features.Marka}" />
+				<Field CaptionHtml="Model" Width="30" LabelWidth="20" EditValue="{Features.Model}" />
+			</Row>
+			<Row>
+				<Field CaptionHtml="Numer seryjny" Width="25" LabelWidth="20" EditValue="{Features.NumerSeryjny}" />
+				<Field CaptionHtml="Kategoria" Width="30" LabelWidth="20" EditValue="{Features.Kategoria}" />
+			</Row>
+		</Group>
+		<Group CaptionHtml="Dane szczegółowe">
+			<Field CaptionHtml="Kategoria energetyczna" Width="15" LabelWidth="20" EditValue="{Features.KategoriaEnergetyczna}" />
+			<Field CaptionHtml="Napięcie zasilania" Width="15" LabelWidth="20" EditValue="{Features.NapięcieZasilania}" />
+			<Field CaptionHtml="Pobór mocy" Width="15" LabelWidth="20" EditValue="{Features.PobórMocy}" />
+		</Group>
+	</Page>
+</DataForm>
