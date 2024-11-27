@@ -18,7 +18,7 @@ namespace FirmaHandlowaHome.Workers
         [Context]
         public DokumentHandlowy DokumentHandlowy { get; set; }
 
-        [Action("Ustaw rabat",
+        [Action("Zwiększ cenę o 20%",
           CommandStyle = Soneta.Commands.CommandStyle.Green,
           Icon = ActionIcon.Book,
           Target = ActionTarget.ToolbarWithText,
