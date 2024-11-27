@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		  Priority="100"
+		  RightName="Page:TowarPozycjeZamowienPage"
+		  xmlns="http://www.enova.pl/schema/form.xsd"
+		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+		  DataType="Soneta.Towary.Towar, Soneta.Handel">
+
+	<Page Name="TowarPozycjeZamowienPage" CaptionHtml="Pozycje zamówień" DataContext="{DataSource}">
+		<Grid EditValue="{new TowarPozycjeZamowienExtender.ViewPozycjeZamowien}"  Width="*" Height="*">
+			<Field CaptionHtml="Dokument" Width="25" EditValue="{Dokument}" />
+			<Field CaptionHtml="Ilość" Width="25" EditValue="{Ilosc}" />
+			<Field CaptionHtml="Cena" Width="25" EditValue="{Cena}" />
+		</Grid>
+	</Page>
+</DataForm>

@@ -2,7 +2,7 @@
 <DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 		  Priority="30"
-		  RightName="Page:TowarModelPage"
+		  RightName="Page:DaneTechnicznePage"
 		  xmlns="http://www.enova.pl/schema/form.xsd"
 		  xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
 		  DataType="Soneta.Towary.Towar, Soneta.Handel">
