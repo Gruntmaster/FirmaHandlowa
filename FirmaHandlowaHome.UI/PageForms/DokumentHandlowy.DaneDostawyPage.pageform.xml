@@ -21,7 +21,7 @@
 		</Group>
 		<Group CaptionHtml="Planowane">
 			<Field Width="25" LabelWidth="20" EditValue="{Workers.DokumentHandlowyCustomInfo.RodzajDostawy}" />
-			<Field Width="25" LabelWidth="20" EditValue="{Workers.DokumentHandlowyCustomInfo.PlanowanaDataDostawy}" />
+			<Field Width="25" LabelWidth="20" EditValue="{Workers.DokumentHandlowyCustomInfo.PlanowanaDataDostawy}" IsReadOnly="{Workers.DokumentHandlowyCustomInfo.WidocznoscDataDostawy}" />
 		</Group>
 		<Group CaptionHtml="Planowane" DataContext="{Workers.DokumentHandlowyCustomInfo}">
 			<Field Width="25" LabelWidth="20" EditValue="{RodzajDostawy}" />

@@ -74,15 +74,28 @@ namespace FirmaHandlowaHome.Workers
             }
         }
 
-        public bool IsReadOnlyPlanowanaDataDostawy()
+        public bool WidocznoscDataDostawy
         {
-            if (RodzajDostawy == "Odbiór osobisty")
-            {
-                return true;
-            }
+           get
+           {
+                if (RodzajDostawy == "Odbiór osobisty")
+                {
+                    return true;
+                }
+                return false;
 
-            return false;
+           }
         }
+
+        //public bool IsReadOnlyPlanowanaDataDostawy()
+        //{
+        //    if (RodzajDostawy == "Odbiór osobisty")
+        //    {
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
 
         public string PokazInfo()
         {
