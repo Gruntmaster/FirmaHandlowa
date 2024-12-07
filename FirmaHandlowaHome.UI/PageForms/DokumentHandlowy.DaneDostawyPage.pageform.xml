@@ -23,5 +23,10 @@
 			<Field Width="25" LabelWidth="20" EditValue="{Workers.DokumentHandlowyCustomInfo.RodzajDostawy}" />
 			<Field Width="25" LabelWidth="20" EditValue="{Workers.DokumentHandlowyCustomInfo.PlanowanaDataDostawy}" />
 		</Group>
+		<Group CaptionHtml="Planowane" DataContext="{Workers.DokumentHandlowyCustomInfo}">
+			<Field Width="25" LabelWidth="20" EditValue="{RodzajDostawy}" />
+			<Command CaptionHtml="Pokaż informacje" MethodName="PokazInfo"/>
+			<Command CaptionHtml="Ustaw datę dostawy dziś" MethodName="UstawDzisiejszaDate"/>
+		</Group>
 	</Page>
 </DataForm>

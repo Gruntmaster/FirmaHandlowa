@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 [assembly: Worker(typeof(DokumentHandlowyCustomInfoWorker),typeof(DokumentHandlowy))]
 
@@ -16,6 +17,9 @@ namespace FirmaHandlowaHome.Workers
     {
         [Context]
         public DokumentHandlowy DokumentHandlowy { get; set; }
+
+        [Context]
+        public Session Session { get; set; }    
 
         [Caption("Info o towarach")]
         public string TowaryStr
@@ -78,6 +82,22 @@ namespace FirmaHandlowaHome.Workers
             }
 
             return false;
+        }
+
+        public string PokazInfo()
+        {
+            return "Jakieś tam info";
+        }
+
+        public void UstawDzisiejszaDate()
+        {
+            using(ITransaction transaction = Session.Logout(true))
+            {
+
+                DokumentHandlowy.Features["PlanowanaDataDostawy"] = Date.Today;
+
+                transaction.CommitUI();
+            }
         }
     }
 }
