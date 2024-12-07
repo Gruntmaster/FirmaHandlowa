@@ -32,6 +32,27 @@ namespace FirmaHandlowaHome.Workers
             }
         }
 
+        [Caption("Rodzaj dostawy")]
+        [ControlEdit(ControlEditKind.ComboBox)]
+        public string RodzajDostawy
+        {
+            get => DokumentHandlowy.Features.GetString("RodzajDostawy");
+            set
+            {
+                DokumentHandlowy.Features["RodzajDostawy"] = value;
+            }
+        }
+
+        public string[] GetListRodzajDostawy()
+        {
+            return new string[]
+            {
+                "Kurier",
+                "Odbiór osobisty",
+                "Poczta"
+            };
+        }
+
         [Caption("Planowana data dostawy")]
         public Date PlanowanaDataDostawy
         {
@@ -47,6 +68,16 @@ namespace FirmaHandlowaHome.Workers
                 }
                 DokumentHandlowy.Features["PlanowanaDataDostawy"] = value;
             }
+        }
+
+        public bool IsReadOnlyPlanowanaDataDostawy()
+        {
+            if (RodzajDostawy == "Odbiór osobisty")
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
